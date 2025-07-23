@@ -1,0 +1,26 @@
+﻿// See https://aka.ms/new-console-template for more information
+
+using Lambdas;
+
+var methodParameter = "This is a method parameter";
+var lambdaParameter = "This is a lambda parameter";
+var capturingVariables = new CapturingVariables();
+
+var logLambda = capturingVariables.CreateLogAction(methodParameter);
+logLambda.Invoke(lambdaParameter);
+
+var alterLambda = capturingVariables.CreateAlterAction(methodParameter);
+alterLambda.Invoke(lambdaParameter);
+
+Console.WriteLine("Instance Field: {0}", capturingVariables.InstanceField);
+Console.WriteLine("Method Parameter: {0}", methodParameter);
+Console.WriteLine("Lambda Parameter {0}", lambdaParameter);
+
+var listLambdas = capturingVariables.CreateActions();
+listLambdas.ForEach(l => l.Invoke());
+
+var counterLambda = capturingVariables.CreateCountingActions();
+counterLambda[0].Invoke();
+counterLambda[0].Invoke();
+counterLambda[1].Invoke();
+counterLambda[1].Invoke();
