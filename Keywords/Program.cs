@@ -2,11 +2,11 @@
 
 // See https://aka.ms/new-console-template for more information
 
-//Internal Keyword
+//Internal
 Console.WriteLine(Internal.x);
 
-//Unsafe Keyword
+//Unsafe
 
-//Using Keyword
+//Using
 
 //try-catch-finally
