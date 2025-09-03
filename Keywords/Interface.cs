@@ -17,6 +17,11 @@
             {
                 soundMaker.MakeSound();
             }
+
+            /// Without interfaces
+            dog.MakeSound();
+            cat.MakeSound();
+            vacuum.MakeSound();
         }
 
         public interface ICanMakeSound
