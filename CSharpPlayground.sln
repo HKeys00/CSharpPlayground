@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambdas", "Lambdas and Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Lambdas and Delegates\Delegates\Delegates.csproj", "{72BDB165-6396-47A2-8CE5-E5671F6CD031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keywords", "Keywords\Keywords.csproj", "{4321F80F-AEFF-4527-91AC-30ABC294D767}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract V Interface", "Keywords\Abstract V Interface.csproj", "{4321F80F-AEFF-4527-91AC-30ABC294D767}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memory", "Memory\Memory.csproj", "{AC78AB4F-6E73-4210-A294-B7189662064D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class v Record v Struct", "Class v Record v Struct\Class v Record v Struct.csproj", "{D1F8B21C-C26E-4709-BC09-FAFD72FB548D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{AC78AB4F-6E73-4210-A294-B7189662064D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC78AB4F-6E73-4210-A294-B7189662064D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC78AB4F-6E73-4210-A294-B7189662064D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F8B21C-C26E-4709-BC09-FAFD72FB548D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F8B21C-C26E-4709-BC09-FAFD72FB548D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F8B21C-C26E-4709-BC09-FAFD72FB548D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F8B21C-C26E-4709-BC09-FAFD72FB548D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6045CD97-9FF1-48A6-AE35-87482EC3B6B5} = {55E2343A-F3C5-4892-BF76-E77A1087993B}
 		{72BDB165-6396-47A2-8CE5-E5671F6CD031} = {55E2343A-F3C5-4892-BF76-E77A1087993B}
-		{AC78AB4F-6E73-4210-A294-B7189662064D} = {55E2343A-F3C5-4892-BF76-E77A1087993B}
 	EndGlobalSection
 EndGlobal
