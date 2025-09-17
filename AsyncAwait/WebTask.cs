@@ -39,5 +39,11 @@
             await Task.Delay(1000);
             Console.WriteLine("After second await");
         }
+
+        public static async Task ThrowError()
+        {
+            await Task.Delay(1000);
+            throw new Exception();
+        }
     }
 }

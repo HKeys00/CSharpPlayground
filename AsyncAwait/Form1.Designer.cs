@@ -83,6 +83,14 @@
             task.Wait();
             Console.WriteLine("Task Completed");
 
+            //Exceptions
+            t = WebTask.ThrowError();
+            Console.WriteLine(t.Status);
+            t.Wait();
+            Console.WriteLine(t.Status);
+
+
+
             ResumeLayout(false);
         }
 
