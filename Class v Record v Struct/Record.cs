@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Class_v_Record_v_Struct
+﻿namespace Class_v_Record_v_Struct
 {
-    internal record Record
+    public record Record(string Name, int Age) //SAME AS 
     {
+        //public string Name {get; init;}
+        //public int Age {get; init;}
     }
 }

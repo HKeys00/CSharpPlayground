@@ -49,3 +49,18 @@ anotherS.X = 200;
 
 Console.WriteLine("{0} {1}", s.X, s.Y);
 Console.WriteLine("{0} {1}", anotherS.X, anotherS.Y);
+
+//Record
+//Immutable by default
+Record r = new Record("Test", 25);
+//r.Age = 25; //*Compiler error
+
+//Value based quality semantics
+Record d = new Record("Test", 25);
+Console.WriteLine(r == d); //Results in true.
+
+//With keyword
+//Can instantiate new records, using another as a base
+//Reduces the amount of boilerplate code that would otherwise need to be written
+Record newRecord = d with { Age = 30 };
+
