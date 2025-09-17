@@ -1,4 +1,6 @@
-﻿namespace AsyncAwait
+﻿using System.Security.Policy;
+
+namespace AsyncAwait
 {
     internal class WebTask
     {
@@ -44,6 +46,11 @@
         {
             await Task.Delay(1000);
             throw new Exception();
+        }
+
+        public static async Task CancelTask(CancellationToken token)
+        {
+            await Task.Delay(50000, token);
         }
     }
 }

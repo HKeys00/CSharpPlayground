@@ -89,7 +89,20 @@
             t.Wait();
             Console.WriteLine(t.Status);
 
+            //Cancellation
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+            t = WebTask.CancelTask(token);
 
+            var method = async () =>
+            {
+                await Task.Delay(500);
+                source.Cancel();
+            };
+
+            method.Invoke();
+            t.Wait();
+            Console.WriteLine(t.Status.ToString());
 
             ResumeLayout(false);
         }
