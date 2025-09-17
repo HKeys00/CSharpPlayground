@@ -24,5 +24,20 @@
 
             return "STRING RETURNED";
         }
+
+        public static void ReturnString(Action<string> action)
+        {
+            ///PERFORM TASK
+            action.Invoke("DONE");
+        }
+
+        public static async Task DemoCompletedAsync()
+        {
+            Console.WriteLine("Before first await");
+            await Task.FromResult(10);
+            Console.WriteLine("Between awaits");
+            await Task.Delay(1000);
+            Console.WriteLine("After second await");
+        }
     }
 }

@@ -76,6 +76,13 @@
             WebTask.ReturnString((s) => { label.Text = s; });
             //This operation is now responsible for invoking the continuation.
 
+
+            //Evaluation
+            Task t = WebTask.DemoCompletedAsync();
+            Console.WriteLine("Method returned");
+            task.Wait();
+            Console.WriteLine("Task Completed");
+
             ResumeLayout(false);
         }
 
