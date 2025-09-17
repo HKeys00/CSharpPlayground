@@ -7,17 +7,6 @@ void ManipulateClass(Class c)
     c.B = 100;
 }
 
-void ManipulateStruct(Struct s)
-{
-    s.X = 100;
-    s.Y = 100;
-}
-
-void ManipulateRecord(Record r)
-{
-
-}
-
 //Class 
 Class c = new Class();
 
