@@ -4,14 +4,14 @@ namespace AsyncAwait
 {
     internal class WebTask
     {
-        public static async Task PerformComplicatedTaskAsync()
+        public static async void PerformComplicatedTaskAsync(object sender, EventArgs e)
         {
             Console.WriteLine("PERFORMING TASK");
             await Task.Delay(1000);
             Console.WriteLine("DONE");
         }
 
-        public static void PerformComplicatedTaskSync()
+        public static void PerformComplicatedTaskSync(object sender, EventArgs e)
         {
             Console.WriteLine("PERFORMING TASK");
             Task.Delay(1000).Wait();

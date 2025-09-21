@@ -52,8 +52,8 @@
             };
 
             //Blocking v Non-Blocking code.
-            asyncButton.Click += WebTask.PerformComplicatedTaskAsync();
-            syncButton.Click += WebTask.PerformComplicatedTaskSync();
+            asyncButton.Click += WebTask.PerformComplicatedTaskAsync;
+            syncButton.Click += WebTask.PerformComplicatedTaskSync;
 
 
             //Performing on the UI thread.
