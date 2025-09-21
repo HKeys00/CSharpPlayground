@@ -1,4 +1,6 @@
-﻿namespace AsyncAwait
+﻿using System.Diagnostics;
+
+namespace AsyncAwait
 {
     partial class Form1
     {
@@ -26,9 +28,10 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private async void InitializeComponent()
+        private void InitializeComponent()
         {
             SuspendLayout();
+
             // 
             // Form1
             // 
@@ -39,74 +42,160 @@
             Text = "Form1";
             Load += Form1_Load;
 
+            // Async vs Sync buttons
             Button asyncButton = new Button()
             {
                 Location = new Point(10, 50),
                 Text = "ASYNC"
             };
+            asyncButton.Click += WebTask.PerformComplicatedTaskAsync;
 
             Button syncButton = new Button()
             {
-                Location = new Point(50, 50),
+                Location = new Point(100, 50),
                 Text = "SYNC"
             };
-
-            //Blocking v Non-Blocking code.
-            asyncButton.Click += WebTask.PerformComplicatedTaskAsync;
             syncButton.Click += WebTask.PerformComplicatedTaskSync;
 
-
-            //Performing on the UI thread.
-            Label label = new Label()
+            // Experiment buttons
+            Button uiThreadButton = new Button()
             {
-                Location = new Point(100, 100),
-                Text = "FETCHING"
+                Location = new Point(10, 100),
+                Text = "UI Thread Demo"
             };
-            string text = await WebTask.ReturnStringAsync();
-            label.Text = text;
+            uiThreadButton.Click += UiThreadDemo_Click;
 
-
-            //Continuation token
-            //Code above is the same as
-
-            var task = WebTask.ReturnStringAsync();
-            task.ContinueWith(t => { label.Text = t.Result; });
-
-            //Callback v Continuation
-            WebTask.ReturnString((s) => { label.Text = s; });
-            //This operation is now responsible for invoking the continuation.
-
-
-            //Evaluation
-            Task t = WebTask.DemoCompletedAsync();
-            Console.WriteLine("Method returned");
-            task.Wait();
-            Console.WriteLine("Task Completed");
-
-            //Exceptions
-            t = WebTask.ThrowError();
-            Console.WriteLine(t.Status);
-            t.Wait();
-            Console.WriteLine(t.Status);
-
-            //Cancellation
-            CancellationTokenSource source = new CancellationTokenSource();
-            CancellationToken token = source.Token;
-            t = WebTask.CancelTask(token);
-
-            var method = async () =>
+            Button continuationButton = new Button()
             {
-                await Task.Delay(500);
-                source.Cancel();
+                Location = new Point(10, 150),
+                Text = "Continuation Demo"
             };
+            continuationButton.Click += ContinuationDemo_Click;
 
-            method.Invoke();
-            t.Wait();
-            Console.WriteLine(t.Status.ToString());
+            Button callbackButton = new Button()
+            {
+                Location = new Point(10, 200),
+                Text = "Callback Demo"
+            };
+            callbackButton.Click += CallbackDemo_Click;
+
+            Button evaluationButton = new Button()
+            {
+                Location = new Point(10, 250),
+                Text = "Evaluation Demo"
+            };
+            evaluationButton.Click += EvaluationDemo_Click;
+
+            Button exceptionButton = new Button()
+            {
+                Location = new Point(10, 300),
+                Text = "Exception Demo"
+            };
+            exceptionButton.Click += ExceptionDemo_Click;
+
+            Button cancellationButton = new Button()
+            {
+                Location = new Point(10, 350),
+                Text = "Cancellation Demo"
+            };
+            cancellationButton.Click += CancellationDemo_Click;
+
+            Controls.AddRange(new Control[]
+            {
+        asyncButton, syncButton,
+        uiThreadButton, continuationButton, callbackButton,
+        evaluationButton, exceptionButton, cancellationButton
+            });
 
             ResumeLayout(false);
         }
 
+
         #endregion
+
+        private async void UiThreadDemo_Click(object sender, EventArgs e)
+        {
+            Label label = new Label()
+            {
+                Location = new Point(200, 100),
+                Text = "FETCHING"
+            };
+            Controls.Add(label);
+
+            string text = await WebTask.ReturnStringAsync();
+            label.Text = text;
+        }
+
+        private void ContinuationDemo_Click(object sender, EventArgs e)
+        {
+            Label label = new Label()
+            {
+                Location = new Point(200, 150),
+                Text = "FETCHING"
+            };
+            Controls.Add(label);
+
+            var task = WebTask.ReturnStringAsync();
+            task.ContinueWith(t => Invoke(() => label.Text = t.Result));
+        }
+
+        private void CallbackDemo_Click(object sender, EventArgs e)
+        {
+            Label label = new Label()
+            {
+                Location = new Point(200, 200),
+                Text = "FETCHING"
+            };
+            Controls.Add(label);
+
+            WebTask.ReturnString(s => Invoke(() => label.Text = s));
+        }
+
+        private async void EvaluationDemo_Click(object sender, EventArgs e)
+        {
+            Task t = WebTask.DemoCompletedAsync();
+            Debug.WriteLine("Method returned");
+            await t;
+            Debug.WriteLine("Task Completed");
+        }
+
+        private async void ExceptionDemo_Click(object sender, EventArgs e)
+        {
+            Task t = WebTask.ThrowError();
+            Debug.WriteLine(t.Status);
+            try
+            {
+                await t;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception: {ex.InnerException?.Message}");
+            }
+            Debug.WriteLine(t.Status);
+        }
+
+        private async void CancellationDemo_Click(object sender, EventArgs e)
+        {
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+            Task t = WebTask.CancelTask(token);
+
+            // Cancel after 500ms
+            await Task.Delay(500);
+            source.Cancel();
+
+            try
+            {
+                await t;
+            }
+            catch (OperationCanceledException)
+            {
+                Debug.WriteLine("Task was cancelled");
+            }
+            Debug.WriteLine(t.Status.ToString());
+        }
+
     }
+
+
 }

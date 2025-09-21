@@ -1,4 +1,5 @@
-﻿using System.Security.Policy;
+﻿using System.Diagnostics;
+using System.Security.Policy;
 
 namespace AsyncAwait
 {
@@ -6,23 +7,23 @@ namespace AsyncAwait
     {
         public static async void PerformComplicatedTaskAsync(object sender, EventArgs e)
         {
-            Console.WriteLine("PERFORMING TASK");
+            Debug.WriteLine("PERFORMING TASK");
             await Task.Delay(1000);
-            Console.WriteLine("DONE");
+            Debug.WriteLine("DONE");
         }
 
         public static void PerformComplicatedTaskSync(object sender, EventArgs e)
         {
-            Console.WriteLine("PERFORMING TASK");
+            Debug.WriteLine("PERFORMING TASK");
             Task.Delay(1000).Wait();
-            Console.WriteLine("DONE");
+            Debug.WriteLine("DONE");
         }
 
         public static async Task<string> ReturnStringAsync()
         {
-            Console.WriteLine("RETURNING STRING");
+            Debug.WriteLine("RETURNING STRING");
             await Task.Delay(1000);
-            Console.WriteLine("DONE");
+            Debug.WriteLine("DONE");
 
             return "STRING RETURNED";
         }
@@ -35,11 +36,11 @@ namespace AsyncAwait
 
         public static async Task DemoCompletedAsync()
         {
-            Console.WriteLine("Before first await");
-            await Task.FromResult(10);
-            Console.WriteLine("Between awaits");
+            Debug.WriteLine("Before first await");
+            await Task.FromResult(100);
+            Debug.WriteLine("Between awaits");
             await Task.Delay(1000);
-            Console.WriteLine("After second await");
+            Debug.WriteLine("After second await");
         }
 
         public static async Task ThrowError()
