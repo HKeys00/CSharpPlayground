@@ -1,0 +1,23 @@
+﻿@page "/counter"
+@using Data;
+@inject WeatherForecastService WeatherService;
+
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @WeatherService.Count</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var m = WeatherService.Count;
+    }
+
+    private void IncrementCount(){
+        WeatherService.Count += 1;
+    }
+}
