@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{477712F1-0A12-414E-9719-18AFE08C6AC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTrees", "ExpressionTrees\ExpressionTrees.csproj", "{67477948-9A41-4F94-9E99-950CDF5B9684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTyping", "DynamicTyping\DynamicTyping.csproj", "{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{477712F1-0A12-414E-9719-18AFE08C6AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{477712F1-0A12-414E-9719-18AFE08C6AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{477712F1-0A12-414E-9719-18AFE08C6AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67477948-9A41-4F94-9E99-950CDF5B9684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67477948-9A41-4F94-9E99-950CDF5B9684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67477948-9A41-4F94-9E99-950CDF5B9684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67477948-9A41-4F94-9E99-950CDF5B9684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
