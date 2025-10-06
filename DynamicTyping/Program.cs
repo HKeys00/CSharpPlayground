@@ -3,5 +3,5 @@ using DynamicTyping;
 
 dynamic obj = new SimpleDynamicExample();
 
-obj.WhosInParis("You know who");
-Console.WriteLine(obj.SomeonesInParis);
+obj.ThisIsAMethodCall("You know who");
+Console.WriteLine(obj.ThisIsAProperty);
