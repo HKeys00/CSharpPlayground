@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTrees", "Expressi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTyping", "DynamicTyping\DynamicTyping.csproj", "{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "Middleware\Middleware.csproj", "{C449832F-4392-4495-981B-764E56482F13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF969CF6-17A1-4C6F-8E7E-6ADE50CA3C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C449832F-4392-4495-981B-764E56482F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C449832F-4392-4495-981B-764E56482F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C449832F-4392-4495-981B-764E56482F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C449832F-4392-4495-981B-764E56482F13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
