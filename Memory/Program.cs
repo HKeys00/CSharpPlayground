@@ -17,6 +17,3 @@ var b = new Bar() { Value = 2 };
 // Bar.Value is an int, stored inline with Bar.
 // If Bar were a field of a class, then both Bar and its Value would be on the heap
 // (because structs live wherever their parent lives).
-
-
-var m = 0;
