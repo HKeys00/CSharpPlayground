@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Memory;
+using System.Runtime.InteropServices;
 
 Console.WriteLine("Hello, World!");
 
@@ -17,3 +18,20 @@ var b = new Bar() { Value = 2 };
 // Bar.Value is an int, stored inline with Bar.
 // If Bar were a field of a class, then both Bar and its Value would be on the heap
 // (because structs live wherever their parent lives).
+
+var array = new[] { 1, 2, 3, 4 };
+var span = new Span<int>(array);
+
+span[0] = 25;
+
+Console.WriteLine(array[0]);
+
+IntPtr ptr = Marshal.AllocHGlobal(5);
+try
+{
+    Span<byte> bytes;
+    unsafe { bytes = new Span<byte>((byte*)ptr, 5); }
+    bytes[0] = 42;
+    Console.WriteLine(Marshal.ReadByte(ptr));
+    Console.WriteLine(bytes[0]);
+} finally { Marshal.FreeHGlobal(ptr); }

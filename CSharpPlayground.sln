@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTyping", "DynamicTyp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "Middleware\Middleware.csproj", "{C449832F-4392-4495-981B-764E56482F13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterators", "Iterators\Iterators.csproj", "{1A225A71-C9D6-40E4-ABD6-8E1D12D0275C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{C449832F-4392-4495-981B-764E56482F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C449832F-4392-4495-981B-764E56482F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C449832F-4392-4495-981B-764E56482F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A225A71-C9D6-40E4-ABD6-8E1D12D0275C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A225A71-C9D6-40E4-ABD6-8E1D12D0275C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A225A71-C9D6-40E4-ABD6-8E1D12D0275C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A225A71-C9D6-40E4-ABD6-8E1D12D0275C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
