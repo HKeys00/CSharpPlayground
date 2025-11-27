@@ -26,7 +26,7 @@
         {
             Console.WriteLine($"{name}: Entering");
 
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
 
             if (Busy)
             {
@@ -37,7 +37,9 @@
             Busy = true;   // Expect Busy to remain true until AFTER await
 
             Console.WriteLine($"{name}: await hit on {Environment.CurrentManagedThreadId}, returning and scheduling continuation");
-            await SynchronouslyCompletingTask(false);
+            var task = SynchronouslyCompletingTask(true);
+            throw new NotImplementedException();
+
 
             Console.WriteLine($"{name}: Continuation run on {Environment.CurrentManagedThreadId}");
 
