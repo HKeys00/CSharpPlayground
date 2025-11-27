@@ -8,7 +8,7 @@
         {
             if (completeSync)
             {
-                //throw new ArgumentNullException(nameof(completeSync));
+                throw new ArgumentNullException(nameof(completeSync));
                 return 0;
             }
 
@@ -25,6 +25,8 @@
         public static async Task HandleRequestAsync(string name)
         {
             Console.WriteLine($"{name}: Entering");
+
+            await Task.Delay(1000);
 
             if (Busy)
             {
