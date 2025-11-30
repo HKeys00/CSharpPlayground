@@ -8,7 +8,6 @@
         {
             if (completeSync)
             {
-                throw new ArgumentNullException(nameof(completeSync));
                 return 0;
             }
 
@@ -37,9 +36,7 @@
             Busy = true;   // Expect Busy to remain true until AFTER await
 
             Console.WriteLine($"{name}: await hit on {Environment.CurrentManagedThreadId}, returning and scheduling continuation");
-            var task = SynchronouslyCompletingTask(true);
-            throw new NotImplementedException();
-
+            await SynchronouslyCompletingTask(false);
 
             Console.WriteLine($"{name}: Continuation run on {Environment.CurrentManagedThreadId}");
 
