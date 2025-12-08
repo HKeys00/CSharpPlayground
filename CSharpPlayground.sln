@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterators", "Iterators\Iter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{FAC79C44-B6C7-429D-A61D-170B654CAA8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{C83BE19F-BA62-4C36-BB87-7028B25166BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{FAC79C44-B6C7-429D-A61D-170B654CAA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAC79C44-B6C7-429D-A61D-170B654CAA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAC79C44-B6C7-429D-A61D-170B654CAA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
