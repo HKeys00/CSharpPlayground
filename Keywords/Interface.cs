@@ -16,6 +16,7 @@
             foreach (var soundMaker in canMakeSounds)
             {
                 soundMaker.MakeSound();
+                soundMaker.Method = "Blah";
             }
 
             /// Without interfaces
@@ -28,12 +29,17 @@
         {
             public int Volume { get; set; }
 
+            public string Method { get; set; }
+
             public void MakeSound();
+
         }
 
         public class Dog: ICanMakeSound
         {
             public int Volume { get; set; }
+
+            public string Method { get; set; }
 
             public Dog()
             {
@@ -49,6 +55,7 @@
         public class Cat: ICanMakeSound
         {
             public int Volume { get; set; }
+            public string Method { get; set; }
 
             public Cat()
             {
@@ -64,6 +71,7 @@
         public class Vacuum: ICanMakeSound
         {
             public int Volume { get; set; }
+            public string Method { get; set; }
 
             public Vacuum()
             {

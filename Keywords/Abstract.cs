@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            Animal animal = new Animal();
+            //Animal animal = new Animal();
             Dog dog = new Dog();
             Cat cat = new Cat();
             Human human = new Human();
@@ -35,16 +35,26 @@
 
         private class Dog: Animal
         {
+            public override void MakeSound()
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private class Cat: Animal
         {
-
+            public override void MakeSound()
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private class Human: Animal
         {
-
+            public override void MakeSound()
+            {
+                throw new NotImplementedException();
+            }
         }
 
 
