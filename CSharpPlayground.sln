@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{C83BE19F-BA62-4C36-BB87-7028B25166BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Span", "Span\Span.csproj", "{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83BE19F-BA62-4C36-BB87-7028B25166BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
