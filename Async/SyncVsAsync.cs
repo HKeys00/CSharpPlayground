@@ -36,7 +36,7 @@
             Busy = true;   // Expect Busy to remain true until AFTER await
 
             Console.WriteLine($"{name}: await hit on {Environment.CurrentManagedThreadId}, returning and scheduling continuation");
-            await SynchronouslyCompletingTask(false);
+            await SynchronouslyCompletingTask(true);
 
             Console.WriteLine($"{name}: Continuation run on {Environment.CurrentManagedThreadId}");
 
@@ -47,10 +47,11 @@
 
         static async Task PrintAndWait(TimeSpan delay)
         {
-            var task1 = Task.Delay(2000);
-            var task2 = Task.Delay(2000);
-
-            await Task.WhenAll(task1, task2);
+            Console.WriteLine("Before first delay");
+            await Task.Delay(delay);
+            Console.WriteLine("Between delays");
+            await Task.Delay(delay);
+            Console.WriteLine("After second delay");
         }
     }
 }

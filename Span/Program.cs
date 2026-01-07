@@ -6,7 +6,7 @@ Span<MutableStruct> spanStructs = new MutableStruct[1];
 List<MutableStruct> listStructs = new List<MutableStruct>() { new MutableStruct() };
 
 spanStructs[0] = listStructs[0];
-listStructs[0].Value = 0;
+//listStructs[0].Value = 0;
 
 var arr = new byte[10];
 

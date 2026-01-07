@@ -1,4 +1,5 @@
 ﻿using Async;
+using BenchmarkDotNet.Running;
 
 Console.WriteLine("=== Starting ===");
 
@@ -9,5 +10,8 @@ var task2 = SyncVsAsync.HandleRequestAsync("B");
 
 await task1;
 await task2;
+
+
+var summary = BenchmarkRunner.Run<Benchmark>();
 
 Console.WriteLine("=== Done ===");
