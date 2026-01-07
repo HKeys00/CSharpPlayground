@@ -53,5 +53,33 @@
             await Task.Delay(delay);
             Console.WriteLine("After second delay");
         }
+
+
+        public static async Task AwaitHeavyWork()
+        {
+            Console.WriteLine("Before Heavy Work");
+            CPUHeavyTask();
+            Console.WriteLine("After Heavy Work");
+        }
+
+        public static async Task RunHeavyWork()
+        {
+            Console.WriteLine("Before Heavy Work");
+            Task.Run(CPUHeavyTask);
+            Console.WriteLine("After Heavy Work");
+        }
+
+
+        public static async Task CPUHeavyTask()
+        {
+            // Simulating heavy work
+            for (int i = 0; i < 100_000_000; i++)
+            {
+                int j = i * 10;
+            }
+
+            await Task.Delay(100);
+            Console.WriteLine("Heavy Work Done");
+        }
     }
 }
