@@ -47,11 +47,10 @@
 
         static async Task PrintAndWait(TimeSpan delay)
         {
-            Console.WriteLine("Before first delay");
-            await Task.Delay(delay);
-            Console.WriteLine("Between delays");
-            await Task.Delay(delay);
-            Console.WriteLine("After second delay");
+            var task1 = Task.Delay(2000);
+            var task2 = Task.Delay(2000);
+
+            await Task.WhenAll(task1, task2);
         }
     }
 }
