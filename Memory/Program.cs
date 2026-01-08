@@ -19,19 +19,11 @@ var b = new Bar() { Value = 2 };
 // If Bar were a field of a class, then both Bar and its Value would be on the heap
 // (because structs live wherever their parent lives).
 
-var array = new[] { 1, 2, 3, 4 };
-var span = new Span<int>(array);
+var m = s;
+Console.WriteLine(ReferenceEquals(m, s));
+Tests.PassRefByRef(ref s);
+Console.WriteLine(ReferenceEquals(m, s));
 
-span[0] = 25;
-
-Console.WriteLine(array[0]);
-
-IntPtr ptr = Marshal.AllocHGlobal(5);
-try
-{
-    Span<byte> bytes;
-    unsafe { bytes = new Span<byte>((byte*)ptr, 5); }
-    bytes[0] = 42;
-    Console.WriteLine(Marshal.ReadByte(ptr));
-    Console.WriteLine(bytes[0]);
-} finally { Marshal.FreeHGlobal(ptr); }
+Tests.PassByIn(in m);
+Tests.PassByRefReadonly(in m);
+Tests.PassByOut(out m);
