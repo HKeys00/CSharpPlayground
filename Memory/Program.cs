@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Buffers;
 using Memory;
 using System.Runtime.InteropServices;
 
@@ -18,6 +20,33 @@ var b = new Bar() { Value = 2 };
 // Bar.Value is an int, stored inline with Bar.
 // If Bar were a field of a class, then both Bar and its Value would be on the heap
 // (because structs live wherever their parent lives).
+
+//const int num = 100;
+//Foo[][] a = new Foo[num][];
+//for (int i = 0; i < num; i++)
+//{
+//    a[i] = new Foo[100_000_000];
+//    for (int j = 0; j < 100_000; j++)
+//    {
+//        a[i][j] = new Foo();
+//    }
+//}
+
+
+const int num = 100;
+ArrayPool<Foo> foo = ArrayPool<Foo>.Shared;
+
+for (int i = 0; i < num; i++)
+{
+    var a = foo.Rent(100_000_000);
+    for (int j = 0; j < 100_000; j++)
+    {
+        a[i] = new Foo();
+    }
+
+    foo.Return(a, true);
+}
+
 
 var m = s;
 Console.WriteLine(ReferenceEquals(m, s));
