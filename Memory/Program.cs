@@ -3,6 +3,7 @@
 using System.Buffers;
 using Memory;
 using System.Runtime.InteropServices;
+using BenchmarkDotNet.Running;
 
 Console.WriteLine("Hello, World!");
 
@@ -33,19 +34,21 @@ var b = new Bar() { Value = 2 };
 //}
 
 
-const int num = 100;
-ArrayPool<Foo> foo = ArrayPool<Foo>.Shared;
+//const int num = 100;
+//ArrayPool<Foo> foo = ArrayPool<Foo>.Shared;
 
-for (int i = 0; i < num; i++)
-{
-    var a = foo.Rent(100_000_000);
-    for (int j = 0; j < 100_000; j++)
-    {
-        a[i] = new Foo();
-    }
+//for (int i = 0; i < num; i++)
+//{
+//    var a = foo.Rent(100_000_000);
+//    for (int j = 0; j < 100_000; j++)
+//    {
+//        a[i] = new Foo();
+//    }
 
-    foo.Return(a, true);
-}
+//    foo.Return(a, true);
+//}
+
+BenchmarkRunner.Run<Tests>();
 
 
 var m = s;
