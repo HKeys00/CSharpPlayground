@@ -15,7 +15,7 @@ var s = new Foo() { Value = 1 };
 // Foo.Value is an int (value type), but because it's a field of Foo (a heap object),
 // it is stored on the heap together with the Foo instance.
 
-var b = new Bar() { Value = 2 };
+//var b = new Bar() { Value = 2 };
 // `b` is a local variable on the stack, and since Bar is a struct (value type),
 // the variable itself contains the actual data of Bar.
 // Bar.Value is an int, stored inline with Bar.

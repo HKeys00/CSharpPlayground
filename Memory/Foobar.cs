@@ -15,14 +15,7 @@ namespace Memory
     // 24 byte struct
     public struct Bar
     {
-        public int Value { get; set; }
-        public int Valu1 { get; set; }
-        public int Valu2 { get; set; }
-        public int Valu3 { get; set; }
-
-        public int Value4 { get; set; }
-
-        public int Value5 { get; set; }
+        public long a, b, c, d, e, f, g, h;
     }
 
 
@@ -52,34 +45,55 @@ namespace Memory
 
 
         [Benchmark]
-        public static void Test1()
+        public void Test1()
         {
             Foo foo = new Foo();
+            int sum = 0;
             for (int i = 0; i < 100_000; i++)
             {
-                SixteenByteTest(foo);
+                sum += SixteenByteTest(foo);
             }
         }
 
         [Benchmark]
-        public static void Test2()
+        public void Test2()
         {
             Bar bar = new Bar();
+            long sum = 0;
             for (int i = 0; i < 100_000; i++)
             {
-                TwentyFourByteTest(bar);
+                sum += TwentyFourByteTest(bar);
             }
         }
 
 
-        public static void SixteenByteTest(Foo foo)
+        public static int SixteenByteTest(Foo foo)
         {
             foo.Valu1 = 1;
+            foo.Value = 3;
+            foo.Valu2 = 1;
+            foo.Valu3 = 2;
+
+            int sum = foo.Valu1 + foo.Valu2 + foo.Valu3 + foo.Value;
+            return sum;
         }
 
-        public static void TwentyFourByteTest(Bar bar)
+        public static long TwentyFourByteTest(Bar bar)
         {
-            bar.Valu1 = 1;
+            // Assign a unique number to each long field in bar
+            bar.a = 1L;
+            bar.b = 2L;
+            bar.c = 3L;
+            bar.d = 4L;
+            bar.e = 5L;
+            bar.f = 6L;
+            bar.g = 7L;
+            bar.h = 8L;
+
+            // Sum all fields
+            long sum = bar.a + bar.b + bar.c + bar.d + bar.e + bar.f + bar.g + bar.h;
+            return sum;
         }
+
     }
 }
