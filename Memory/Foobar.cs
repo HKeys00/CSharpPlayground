@@ -2,6 +2,29 @@
 
 namespace Memory
 {
+    public class FooCache()
+    {
+        private Dictionary<string, WeakReference<object>> _cache = new();
+
+        public void Set(string key, object value)
+        {
+            _cache[key] = new WeakReference<object>(value);
+        }
+
+        public object? Get(string key)
+        {
+            if (_cache.TryGetValue(key, out var value) &&
+                value.TryGetTarget(out var target))
+            {
+                return target;
+            }
+
+            Console.WriteLine("Reference doesn't exist it has been collected");
+            return string.Empty;
+        }
+    }
+
+
     // 16 byte struct
     public struct Foo
     {

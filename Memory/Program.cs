@@ -48,7 +48,25 @@ var s = new Foo() { Value = 1 };
 //    foo.Return(a, true);
 //}
 
-BenchmarkRunner.Run<Tests>();
+//BenchmarkRunner.Run<Tests>();
+
+FooCache cache = new FooCache();
+
+    for (int j = 0; j < 1000 ; j++)
+    {
+        var array = new long[100000];
+        cache.Set(j.ToString(), array);
+    }
+
+    GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: true);
+    GC.WaitForPendingFinalizers();
+    GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: true);
+
+
+    for (int j = 0; j < 1000; j++)
+    {
+        cache.Get(j.ToString());
+    }
 
 
 var m = s;
