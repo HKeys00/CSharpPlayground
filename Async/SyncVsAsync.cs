@@ -36,7 +36,7 @@
             Busy = true;   // Expect Busy to remain true until AFTER await
 
             Console.WriteLine($"{name}: await hit on {Environment.CurrentManagedThreadId}, returning and scheduling continuation");
-            await SynchronouslyCompletingTask(false);
+            await Task.Yield();
 
             Console.WriteLine($"{name}: Continuation run on {Environment.CurrentManagedThreadId}");
 
