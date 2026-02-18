@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Span", "Span\Span.csproj", "{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", "{F904DF8C-4F8F-455B-B03E-FE1592780ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB452B8-7165-4DF0-BB5D-CB3ACB79D187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F904DF8C-4F8F-455B-B03E-FE1592780ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F904DF8C-4F8F-455B-B03E-FE1592780ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F904DF8C-4F8F-455B-B03E-FE1592780ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F904DF8C-4F8F-455B-B03E-FE1592780ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6045CD97-9FF1-48A6-AE35-87482EC3B6B5} = {55E2343A-F3C5-4892-BF76-E77A1087993B}
 		{72BDB165-6396-47A2-8CE5-E5671F6CD031} = {55E2343A-F3C5-4892-BF76-E77A1087993B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E0DED18-4CF9-4984-BEB4-7EEC6844915C}
 	EndGlobalSection
 EndGlobal
