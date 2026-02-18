@@ -8,7 +8,7 @@ using BenchmarkDotNet.Running;
 Console.WriteLine("Hello, World!");
 
 
-var s = new Foo() { Value = 1 };
+var s = new FooClass() { Value = 1 };
 // `s` is a local variable on the stack, but since Foo is a class (reference type),
 // the variable only holds a reference (pointer).
 // The Foo instance itself is created on the heap.
@@ -71,9 +71,11 @@ FooCache cache = new FooCache();
 
 var m = s;
 Console.WriteLine(ReferenceEquals(m, s));
+Tests.PassRef(s);
+Console.WriteLine(ReferenceEquals(m, s));
 Tests.PassRefByRef(ref s);
 Console.WriteLine(ReferenceEquals(m, s));
 
-Tests.PassByIn(in m);
-Tests.PassByRefReadonly(in m);
-Tests.PassByOut(out m);
+//Tests.PassByIn(in m);
+//Tests.PassByRefReadonly(in m);
+//Tests.PassByOut(out m);

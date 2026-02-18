@@ -24,6 +24,14 @@ namespace Memory
         }
     }
 
+    public class FooClass
+    {
+        public int Value { get; set; }
+        public int Valu1 { get; set; }
+        public int Valu2 { get; set; }
+        public int Valu3 { get; set; }
+    }
+
 
     // 16 byte struct
     public struct Foo
@@ -32,7 +40,6 @@ namespace Memory
         public int Valu1 { get; set; }
         public int Valu2 { get; set; }
         public int Valu3 { get; set; }
-
     }
 
     // 24 byte struct
@@ -45,9 +52,17 @@ namespace Memory
     [MemoryDiagnoser]
     public class Tests
     {
-        public static void PassRefByRef(ref Foo foo)
+        public static void PassRefByRef(ref FooClass foo)
         {
-            foo = new Foo();
+            foo = new FooClass();
+            foo.Valu3 = 5;
+            //foo = new Foo();
+        }
+
+        public static void PassRef(FooClass foo)
+        {
+            foo = new FooClass();
+            foo.Value = 5;
         }
 
         public static void PassByIn(in Foo foo)
